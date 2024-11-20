@@ -34,9 +34,11 @@ export interface ItensArray {
 @Tags("Item")
 export default class ItemController {
     private cadastrarItemUseCase: CadastrarItemUseCase;
+    private listarItensUseCase: ListarItensUseCase;
 
     constructor(itemGateway: ItemGateway) {
         this.cadastrarItemUseCase = new CadastrarItemUseCase(itemGateway);
+        this.listarItensUseCase = new ListarItensUseCase(itemGateway);
     }
     /**
      * Cadastro de um item no cardápio
@@ -105,19 +107,21 @@ export default class ItemController {
      */
     @Get("/:categoria")
     public async buscaItemPorCategoria(@Path() categoria: string): Promise<ItensArray> {
-        const listaCategoria = new ListarItensUseCase(new ItemGateway());
-        const itens = await listaCategoria.listarPorCategoria(categoria.toUpperCase());
+        const itens = await this.listarItensUseCase.listarPorCategoria(categoria.toUpperCase());
         const itensResponse: ItensArray = { itens: [] };
-        itens.forEach(element => {
-            itensResponse.itens.push({
-                id: element.id,
-                nome: element.nome,
-                descricao: element.descricao,
-                preco: element.preco.valor,
-                ingredientes: element.ingredientes,
-                categoria: element.categoria
-            })
-        });
+
+        if (itens && Array.isArray(itens)) {
+            itens.forEach(element => {
+                itensResponse.itens.push({
+                    id: element.id,
+                    nome: element.nome,
+                    descricao: element.descricao,
+                    preco: element.preco.valor,
+                    ingredientes: element.ingredientes,
+                    categoria: element.categoria
+                })
+            });
+        }
         return itensResponse;
     }
 }
