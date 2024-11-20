@@ -228,7 +228,7 @@ resource "aws_ecs_task_definition" "ms_produtos_task" {
     environment = [
       {
         name  = "MODE"
-        value = "Máquina local"
+        value = "ECS-AWS"
       },
       {
         name  = "TYPEORM_HOST"
@@ -244,7 +244,7 @@ resource "aws_ecs_task_definition" "ms_produtos_task" {
       },
       {
         name  = "TYPEORM_DATABASE"
-        value = "lanchonete"
+        value = "msproduto"
       }
     ]
 
