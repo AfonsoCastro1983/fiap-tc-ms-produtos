@@ -83,6 +83,6 @@ jobs:
       - name: Update ECS service
         run: |
           aws ecs update-service \
-            --cluster ms_Produtos-ECS-Cluster \
-            --service ms_Produtos-service \
+            --cluster ms_produtos-ECS-Cluster \
+            --service ms_produtos-service \
             --force-new-deployment
