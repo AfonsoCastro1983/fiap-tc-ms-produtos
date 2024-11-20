@@ -1,0 +1,270 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"ItemResponse": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"nome": {
+						"type": "string"
+					},
+					"descricao": {
+						"type": "string"
+					},
+					"preco": {
+						"type": "number",
+						"format": "double"
+					},
+					"ingredientes": {
+						"type": "string"
+					},
+					"categoria": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"nome",
+					"descricao",
+					"preco",
+					"ingredientes",
+					"categoria"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
+			"ItemNovoRequest": {
+				"properties": {
+					"nome": {
+						"type": "string"
+					},
+					"descricao": {
+						"type": "string"
+					},
+					"preco": {
+						"type": "number",
+						"format": "double"
+					},
+					"ingredientes": {
+						"type": "string"
+					},
+					"categoria": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"nome",
+					"descricao",
+					"preco",
+					"ingredientes",
+					"categoria"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
+			"ItemModificarRequest": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"nome": {
+						"type": "string"
+					},
+					"descricao": {
+						"type": "string"
+					},
+					"preco": {
+						"type": "number",
+						"format": "double"
+					},
+					"ingredientes": {
+						"type": "string"
+					},
+					"categoria": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"nome",
+					"descricao",
+					"preco",
+					"ingredientes",
+					"categoria"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
+			"ItensArray": {
+				"properties": {
+					"itens": {
+						"items": {
+							"$ref": "#/components/schemas/ItemResponse"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"itens"
+				],
+				"type": "object",
+				"additionalProperties": true
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "fiap-tc-ms-produtos",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/item": {
+			"post": {
+				"operationId": "SalvarNovoItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ItemResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Cadastro de um item no cardápio",
+				"tags": [
+					"Item"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ItemNovoRequest"
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "EditarItem",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ItemResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Modificar um item do cardápio",
+				"tags": [
+					"Item"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ItemModificarRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/item/{id}": {
+			"delete": {
+				"operationId": "EliminarItem",
+				"responses": {
+					"200": {
+						"description": "Verdadeiro se o item foi excluído ou falso se houve algum erro na excluão ou o item não existe",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				},
+				"description": "Elimina o item escolhido",
+				"tags": [
+					"Item"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "identificador do item",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/item/{categoria}": {
+			"get": {
+				"operationId": "BuscaItemPorCategoria",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ItensArray"
+								}
+							}
+						}
+					}
+				},
+				"description": "Lista todos os itens por categoria",
+				"tags": [
+					"Item"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "categoria",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

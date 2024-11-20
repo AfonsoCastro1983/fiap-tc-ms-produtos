@@ -1,0 +1,26 @@
+<testExecutions version="1">
+<file path="tests/Preco.test.ts">
+<testCase name="Preco Quando o objeto &#xe9; criado Deve lan&#xe7;ar um erro se o valor inicial for negativo" duration="8" />
+<testCase name="Preco Quando o objeto &#xe9; criado Deve criar o objeto corretamente se o valor inicial for positivo" duration="0" />
+<testCase name="Preco Quando somar dois pre&#xe7;os Deve retornar um novo objeto com a soma dos valores" duration="1" />
+<testCase name="Preco Quando subtrair dois pre&#xe7;os Deve retornar um novo objeto com o valor restante" duration="0" />
+<testCase name="Preco Quando subtrair dois pre&#xe7;os Deve lan&#xe7;ar um erro se o valor a subtrair for maior que o atual" duration="1" />
+<testCase name="Preco Quando chamar o m&#xe9;todo toString Deve retornar uma string formatada corretamente" duration="0" />
+</file>
+<file path="tests/CadastrarItemUseCase.test.ts">
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item com pre&#xe7;o negativo" duration="26" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item sem nome" duration="4" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao buscar um item inexistente" duration="1" />
+<testCase name="CadastrarItemUseCase deve deletar um item pelo &#xed;ndice" duration="1" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="1" />
+</file>
+<file path="tests/ItemGateway.test.ts">
+<testCase name="ItemGateway deve salvar um novo item" duration="4" />
+<testCase name="ItemGateway deve modificar o pre&#xe7;o de um item" duration="6" />
+<testCase name="ItemGateway deve pesquisar um item pelo ID" duration="1" />
+<testCase name="ItemGateway deve lan&#xe7;ar erro ao buscar item inexistente" duration="5" />
+<testCase name="ItemGateway deve excluir um item pelo ID" duration="1" />
+<testCase name="ItemGateway deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="0" />
+<testCase name="ItemGateway deve listar itens por categoria" duration="0" />
+</file>
+</testExecutions>
