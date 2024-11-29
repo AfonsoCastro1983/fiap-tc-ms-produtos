@@ -8,7 +8,7 @@ import { Preco } from "../../../shared/valueobjects/Preco";
 import { Categoria } from "../../../shared/emuns/Categoria";
 
 export class ItemGateway implements IItemGateway {
-    private repItem: Repository<ItemRepository>;
+    private readonly repItem: Repository<ItemRepository>;
 
     constructor () {
         this.repItem = AppDataSource.getRepository(ItemRepository);
