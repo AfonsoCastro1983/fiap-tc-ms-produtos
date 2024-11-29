@@ -1,40 +1,40 @@
 <testExecutions version="1">
 <file path="tests/Preco.test.ts">
-<testCase name="Preco Quando o objeto &#xe9; criado Deve lan&#xe7;ar um erro se o valor inicial for negativo" duration="10" />
-<testCase name="Preco Quando o objeto &#xe9; criado Deve criar o objeto corretamente se o valor inicial for positivo" duration="1" />
-<testCase name="Preco Quando somar dois pre&#xe7;os Deve retornar um novo objeto com a soma dos valores" duration="1" />
-<testCase name="Preco Quando subtrair dois pre&#xe7;os Deve retornar um novo objeto com o valor restante" duration="0" />
+<testCase name="Preco Quando o objeto &#xe9; criado Deve lan&#xe7;ar um erro se o valor inicial for negativo" duration="31" />
+<testCase name="Preco Quando o objeto &#xe9; criado Deve criar o objeto corretamente se o valor inicial for positivo" duration="0" />
+<testCase name="Preco Quando somar dois pre&#xe7;os Deve retornar um novo objeto com a soma dos valores" duration="0" />
+<testCase name="Preco Quando subtrair dois pre&#xe7;os Deve retornar um novo objeto com o valor restante" duration="1" />
 <testCase name="Preco Quando subtrair dois pre&#xe7;os Deve lan&#xe7;ar um erro se o valor a subtrair for maior que o atual" duration="1" />
 <testCase name="Preco Quando chamar o m&#xe9;todo toString Deve retornar uma string formatada corretamente" duration="1" />
 </file>
-<file path="tests/CadastrarItemUseCase.test.ts">
-<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item com pre&#xe7;o negativo" duration="14" />
-<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item sem nome" duration="3" />
-<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao buscar um item inexistente" duration="1" />
-<testCase name="CadastrarItemUseCase deve deletar um item pelo &#xed;ndice" duration="1" />
-<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="1" />
-</file>
-<file path="tests/ListarItensUseCase.test.ts">
-<testCase name="ListarItensUseCase deve listar itens por categoria v&#xe1;lida" duration="11" />
-<testCase name="ListarItensUseCase deve lan&#xe7;ar erro ao tentar listar itens por categoria inv&#xe1;lida" duration="15" />
-<testCase name="ListarItensUseCase deve retornar uma lista vazia quando n&#xe3;o houver itens para a categoria" duration="2" />
-</file>
 <file path="tests/ItemGateway.test.ts">
-<testCase name="ItemGateway deve salvar um novo item" duration="12" />
-<testCase name="ItemGateway deve modificar o pre&#xe7;o de um item" duration="13" />
-<testCase name="ItemGateway deve pesquisar um item pelo ID" duration="2" />
-<testCase name="ItemGateway deve lan&#xe7;ar erro ao buscar item inexistente" duration="7" />
+<testCase name="ItemGateway deve salvar um novo item" duration="5" />
+<testCase name="ItemGateway deve modificar o pre&#xe7;o de um item" duration="3" />
+<testCase name="ItemGateway deve pesquisar um item pelo ID" duration="3" />
+<testCase name="ItemGateway deve lan&#xe7;ar erro ao buscar item inexistente" duration="8" />
 <testCase name="ItemGateway deve excluir um item pelo ID" duration="1" />
-<testCase name="ItemGateway deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="4" />
+<testCase name="ItemGateway deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="1" />
 <testCase name="ItemGateway deve listar itens por categoria" duration="1" />
 </file>
+<file path="tests/ListarItensUseCase.test.ts">
+<testCase name="ListarItensUseCase deve listar itens por categoria v&#xe1;lida" duration="9" />
+<testCase name="ListarItensUseCase deve lan&#xe7;ar erro ao tentar listar itens por categoria inv&#xe1;lida" duration="6" />
+<testCase name="ListarItensUseCase deve retornar uma lista vazia quando n&#xe3;o houver itens para a categoria" duration="1" />
+</file>
+<file path="tests/CadastrarItemUseCase.test.ts">
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item com pre&#xe7;o negativo" duration="25" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar salvar um item sem nome" duration="4" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao buscar um item inexistente" duration="1" />
+<testCase name="CadastrarItemUseCase deve deletar um item pelo &#xed;ndice" duration="3" />
+<testCase name="CadastrarItemUseCase deve lan&#xe7;ar erro ao tentar deletar um item inexistente" duration="1" />
+</file>
 <file path="tests/ItemController.test.ts">
-<testCase name="ItemController deve salvar um novo item" duration="5" />
-<testCase name="ItemController deve lan&#xe7;ar erro ao salvar um item com dados inv&#xe1;lidos" duration="12" />
+<testCase name="ItemController deve salvar um novo item" duration="11" />
+<testCase name="ItemController deve lan&#xe7;ar erro ao salvar um item com dados inv&#xe1;lidos" duration="21" />
 <testCase name="ItemController deve editar um item existente" duration="1" />
-<testCase name="ItemController deve excluir um item existente" duration="0" />
+<testCase name="ItemController deve excluir um item existente" duration="1" />
 <testCase name="ItemController deve lan&#xe7;ar erro ao excluir um item inexistente" duration="1" />
 <testCase name="ItemController deve listar itens por categoria v&#xe1;lida" duration="2" />
-<testCase name="ItemController deve lan&#xe7;ar erro ao listar itens por categoria inv&#xe1;lida" duration="1" />
+<testCase name="ItemController deve lan&#xe7;ar erro ao listar itens por categoria inv&#xe1;lida" duration="3" />
 </file>
 </testExecutions>
