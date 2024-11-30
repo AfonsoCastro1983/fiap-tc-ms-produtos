@@ -44,7 +44,7 @@ export class ItemGateway implements IItemGateway {
         const pesq = await this.repItem.findOneBy({ id: id });
         if (pesq) {
             try {
-                this.repItem.remove(pesq);
+                await this.repItem.remove(pesq);
                 return true;
             }
             catch (error) {
